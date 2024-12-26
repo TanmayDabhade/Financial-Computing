@@ -1,6 +1,6 @@
 import yfinance as yf
 
-class Financial_Analysis():
+class FetchData():
     def __init__(self, symbol = "NFLX"):
         self.symbol = symbol
 

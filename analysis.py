@@ -1,5 +1,5 @@
 import pandas as pd
-from fetch_data import Financial_Analysis 
+from fetch_data import FetchData
 
 data_dict = {
     '1d': 'hist_1_day',
@@ -16,8 +16,7 @@ data_dict = {
 
 def fetch_data():
     ticker_symbol = input("Enter stock symbol(ex. NFLX, AAPL, etc.): ")
-    Financial_Model = Financial_Analysis(ticker_symbol)
-    Financial_Model.fetch_financial_data()
+    FetchData(ticker_symbol).fetch_financial_data()
 
 def load_data(time_frame = 'ytd', data= data_dict):
     data_frame = pd.read_csv(f'../financial_computing/csv_data/{data[time_frame]}.csv')
