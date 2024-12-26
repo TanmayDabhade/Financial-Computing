@@ -1,4 +1,5 @@
 import pandas as pd
+from fetch_data import Financial_Analysis 
 
 data_dict = {
     '1d': 'hist_1_day',
@@ -12,6 +13,11 @@ data_dict = {
     '10y': 'hist_10_year',
     'ytd': 'hist_ytd'
 }
+
+def fetch_data():
+    ticker_symbol = input("Enter stock symbol(ex. NFLX, AAPL, etc.): ")
+    Financial_Model = Financial_Analysis(ticker_symbol)
+    Financial_Model.fetch_financial_data()
 
 def load_data(time_frame = 'ytd', data= data_dict):
     data_frame = pd.read_csv(f'../financial_computing/csv_data/{data[time_frame]}.csv')
@@ -32,11 +38,10 @@ def Simple_Moving_Average(data):
     print(f'Simple Moving Average for given symbol is {Simple_Moving_Average_Value}')
     return Simple_Moving_Average_Value
 
-    
-
 
 
 def main():
+    fetch_data()
     financial_data = load_data('5d', data_dict)
     Volume_Weighted_Average_Price(financial_data)
     Simple_Moving_Average(financial_data)
