@@ -13,15 +13,6 @@ This repository contains a Python-based toolkit designed for performing comprehe
 - **Financial Metrics & Indicators**  
   Compute returns, volatility, Sharpe ratios, moving averages, MACD, and various other technical and fundamental indicators.
 
-- **Portfolio Analysis & Optimization**  
-  Perform mean-variance optimization, construct efficient frontiers, and conduct scenario analyses to improve portfolio allocation.
-
-- **Risk Management**  
-  Estimate Value-at-Risk (VaR), Conditional Value-at-Risk (CVaR), and beta values for assets or portfolios. Stress-test portfolios against various market conditions.
-
-- **Automated Reports & Visualizations**  
-  Generate PDF reports, interactive charts, and dashboards to help visualize trends, correlations, and performance over time.
-
 ## Getting Started
 
 ### Prerequisites

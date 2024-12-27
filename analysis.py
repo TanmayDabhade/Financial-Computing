@@ -32,18 +32,39 @@ def Volume_Weighted_Average_Price(data):
     print(f'VWAP for 5days in symbol is {Volume_Weighted_Average_Price_Value}')
     return Volume_Weighted_Average_Price_Value
 
+def Standard_Deviation_Stock(data):
+    standard_deviation_close = data['Close'].std()
+    standard_deviation_high = data['High'].std()
+    standard_deviation_low = data['Low'].std()
+    print(f'Standard Deviation of high price for given symbol is {standard_deviation_high}')
+    print(f'Standard Deviation of low price for given symbol is {standard_deviation_low}')
+    print(f'Standard Deviation of closing price for given symbol is {standard_deviation_close}')
+    return standard_deviation_close, standard_deviation_high, standard_deviation_low
+
 def Simple_Moving_Average(data):
     Simple_Moving_Average_Value = sum(data.Close) / len(data)
     print(f'Simple Moving Average for given symbol is {Simple_Moving_Average_Value}')
     return Simple_Moving_Average_Value
+
+def Exponential_Moving_Average(data):
+    pass
+
 
 
 
 def main():
     fetch_data()
     financial_data = load_data('5d', data_dict)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("Volume Weighted Average Price for 5 days")
     Volume_Weighted_Average_Price(financial_data)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("Simple Moving Average for 5 days")
     Simple_Moving_Average(financial_data)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("Standard Deviation for 5 days")
+    Standard_Deviation_Stock(financial_data)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 
 
